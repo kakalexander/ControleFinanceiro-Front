@@ -7,12 +7,12 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  name: string = '';
+  username: string = '';
   email: string = '';
   password: string = '';
 
@@ -20,7 +20,7 @@ export class RegisterComponent {
 
   async onRegister() {
     const user = {
-      name: this.name,
+      username: this.username,
       email: this.email,
       password: this.password
     };

@@ -1,8 +1,10 @@
+// src/app/dashboard/dashboard.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalService } from '../professional-form/professional.service';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-dashboard',

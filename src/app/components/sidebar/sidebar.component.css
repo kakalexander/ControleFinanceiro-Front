@@ -1,0 +1,72 @@
+/* src/app/components/sidebar/sidebar.component.scss */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding-top: 60px;
+    transition: width 0.3s ease; /* Animação suave */
+    z-index: 1000; /* Certifique-se de que a sidebar fique sobre o conteúdo */
+  }
+  
+  .sidebar-container.closed {
+    width: 60px; /* Largura do sidebar fechado */
+  }
+  
+  .toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1100; /* Botão de alternância deve ficar acima do sidebar */
+  }
+  
+  .sidebar {
+    height: 100%;
+    padding-top: 20px; /* Ajusta o espaçamento entre o topo e os itens do menu */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #444;
+  }
+  
+  .sidebar ul li fa-icon {
+    margin-right: 15px; /* Aumenta o espaçamento entre o ícone e o texto */
+  }
+  
+  .sidebar ul li span {
+    display: inline-block;
+    font-size: 16px;
+    white-space: nowrap; /* Evita que o texto quebre em múltiplas linhas */
+  }
+  
+  .sidebar-container.closed .sidebar ul li span {
+    display: none; /* Oculta o texto quando o sidebar está fechado */
+  }
+  
+  .content {
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar-container.closed ~ .content {
+    margin-left: 60px; /* Ajusta a margem quando o sidebar está fechado */
+  }
+:host {
+    display: block !important; /* Garanta que o Sidebar tenha display:block */
+}

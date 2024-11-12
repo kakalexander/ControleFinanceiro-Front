@@ -1,0 +1,26 @@
+<div class="sidebar-container" [class.closed]="!isOpen">
+    <div class="toggle-btn" (click)="toggleSidebar()">
+      <fa-icon [icon]="faBars"></fa-icon>
+    </div>
+    <nav class="sidebar" *ngIf="isOpen">
+      <ul>
+        <li (click)="navigateTo('/dashboard')">
+          <fa-icon [icon]="faTachometerAlt"></fa-icon>
+          <span>Início</span>
+        </li>
+        <li (click)="navigateTo('/monitoring')">
+          <fa-icon [icon]="faEye"></fa-icon>
+          <span>Monitoramento</span>
+        </li>
+        <li (click)="navigateTo('/professional-form')">
+          <fa-icon [icon]="faUser"></fa-icon>
+          <span>Profissionais</span>
+        </li>
+        <li (click)="logout()">
+          <fa-icon [icon]="faSignOutAlt"></fa-icon>
+          <span>Sair</span>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  

@@ -3,6 +3,7 @@ import { ProfessionalService } from '../professional-form/professional.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-monitoring',

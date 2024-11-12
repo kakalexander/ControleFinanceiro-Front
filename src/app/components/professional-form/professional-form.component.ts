@@ -3,6 +3,7 @@ import { ProfessionalService } from './professional.service';
 import { from } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-professional-form',
