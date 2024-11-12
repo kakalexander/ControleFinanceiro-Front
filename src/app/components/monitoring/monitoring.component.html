@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Monitoramento</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="professional">Profissional</label>
+            <select id="professional" class="form-control" [(ngModel)]="selectedProfessional" name="professional" required>
+              <option *ngFor="let professional of professionals" [value]="professional._id">{{ professional.name }}</option>
+            </select>
+          </div>
+          <div class="form-group" *ngFor="let month of months">
+            <label for="{{month}}">{{month}}</label>
+            <input type="number" id="{{month}}" class="form-control" [(ngModel)]="faturamento[month]" name="{{month}}" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Salvar Faturamento</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h5 class="modal-title">Comparar Profissionais</h5>
+    <button type="button" class="btn-close" (click)="close()"></button>
+  </div>
+  <div class="modal-body">
+    <form (submit)="compare()">
+      <div class="form-group">
+        <label for="professional1">Profissional 1</label>
+        <select id="professional1" class="form-control" [(ngModel)]="professional1" name="professional1" required>
+          <option *ngFor="let professional of professionals" [value]="professional._id">{{ professional.name }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="professional2">Profissional 2</label>
+        <select id="professional2" class="form-control" [(ngModel)]="professional2" name="professional2" required>
+          <option *ngFor="let professional of professionals" [value]="professional._id">{{ professional.name }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Comparar</button>
+    </form>
+    <div *ngIf="comparisonResults">
+      <h3>Resultados da Comparação</h3>
+      <p>Faturamento Mensal</p>
+      <ul>
+        <li *ngFor="let month of months">
+          {{ month }}: {{ comparisonResults[month] }}
+        </li>
+      </ul>
+      <p>Meta Anual</p>
+      <ul>
+        <li>{{ comparisonResults.meta }}</li>
+      </ul>
+    </div>
+  </div>
+  

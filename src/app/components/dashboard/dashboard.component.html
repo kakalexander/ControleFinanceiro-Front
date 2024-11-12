@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Dashboard</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Faturamento Mensal</th>
+            <th>Meta</th>
+            <th>Rendimento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let professional of professionals">
+            <td>{{ professional.name }}</td>
+            <td>{{ professional.email }}</td>
+            <td>{{ professional.monthlyRevenue | json }}</td>
+            <td>{{ professional.goal | json }}</td>
+            <td>{{ professional.revenuePercentage }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
