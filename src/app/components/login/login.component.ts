@@ -15,18 +15,19 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  loginError: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    from(this.authService.login(this.email, this.password)).subscribe(
-      (response: any) => {
-        localStorage.setItem('token', response.data.token);
+    this.authService.login(this.email, this.password)
+      .then(response => {
+        // Se o login for bem-sucedido, redireciona para o Dashboard
         this.router.navigate(['/dashboard']);
-      },
-      (error: any) => {
-        alert('Login falhou!');
-      }
-    );
+      })
+      .catch(error => {
+        // Se ocorrer erro no login, mostra uma mensagem de erro
+        this.loginError = 'Login falhou. Verifique as credenciais.';
+      });
   }
 }
